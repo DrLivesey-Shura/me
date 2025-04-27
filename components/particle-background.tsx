@@ -1,23 +1,25 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 export function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas!.getContext("2d");
     if (!ctx) return;
 
     let particles: Particle[] = [];
     let animationFrameId: number;
 
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas!.width = window.innerWidth;
+      canvas!.height = window.innerHeight;
       initParticles();
     };
 
@@ -63,9 +65,11 @@ export function ParticleBackground() {
 
     function initParticles() {
       particles = [];
-      const particleCount = Math.floor(
-        (canvas!.width * canvas!.height) / 15000
-      );
+      // Reduce particle count on mobile
+      const particleCount = isMobile
+        ? Math.floor((canvas!.width * canvas!.height) / 30000)
+        : Math.floor((canvas!.width * canvas!.height) / 15000);
+
       for (let i = 0; i < particleCount; i++) {
         particles.push(new Particle());
       }
@@ -73,7 +77,9 @@ export function ParticleBackground() {
 
     function connectParticles() {
       if (!ctx) return;
-      const maxDistance = 150;
+      // Reduce connection distance on mobile
+      const maxDistance = isMobile ? 100 : 150;
+
       for (let a = 0; a < particles.length; a++) {
         for (let b = a; b < particles.length; b++) {
           const dx = particles[a].x - particles[b].x;
@@ -114,7 +120,7 @@ export function ParticleBackground() {
       window.removeEventListener("resize", resizeCanvas);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <canvas

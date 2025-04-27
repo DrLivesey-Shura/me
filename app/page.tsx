@@ -6,10 +6,11 @@ import { CursorFollower } from "@/components/cursor-follower";
 import { SectionWrapper } from "@/components/section-wrapper";
 import { ParticleBackground } from "@/components/particle-background";
 import { AnimatedCard } from "@/components/animated-card";
+import { MobileNav } from "@/components/mobile-nav";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden">
+    <div className="mx-2 min-h-screen bg-black text-white overflow-hidden">
       <CursorFollower />
       <ParticleBackground />
 
@@ -54,22 +55,25 @@ export default function Home() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           </nav>
-          <Button
-            variant="outline"
-            className="border-purple-500 text-purple-500 hover:bg-purple-500/10 relative overflow-hidden group"
-            asChild
-          >
-            <a href="/CV.pdf" download>
-              <span className="relative z-10">Resume</span>
-              <span className="absolute inset-0 bg-purple-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
-              <span className="absolute inset-0 bg-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100"></span>
-            </a>
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              className="border-purple-500 text-purple-500 hover:bg-purple-500/10 relative overflow-hidden group hidden md:flex"
+              asChild
+            >
+              <a href="/CV.pdf" download>
+                <span className="relative z-10">Resume</span>
+                <span className="absolute inset-0 bg-purple-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+                <span className="absolute inset-0 bg-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100"></span>
+              </a>
+            </Button>
+            <MobileNav />
+          </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 container px-4 mx-auto min-h-screen flex items-center">
+      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 container px-4 mx-auto min-h-[90vh] md:min-h-screen flex items-center">
         <div className="absolute inset-0 -z-10 h-full w-full bg-black">
           <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div>
         </div>
@@ -78,14 +82,14 @@ export default function Home() {
             <p className="text-purple-500 font-medium mb-2 opacity-0 animate-[fadeIn_0.5s_0.1s_forwards]">
               Hi, my name is
             </p>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4">
               <AnimatedText
                 text="MERAH ALAEDDINE"
                 className="text-white"
                 once
               />
             </h1>
-            <h2 className="text-1xl md:text-5xl font-bold text-zinc-400 mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-zinc-400 mb-6">
               <AnimatedText
                 text="Full-Stack Developer | AI Enthusiast | Builder of Scalable Systems"
                 className="text-zinc-400"
@@ -98,13 +102,15 @@ export default function Home() {
               platforms, or computer vision projects, I combine strong
               engineering practices with a user-first approach.
             </p>
-            <Button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-6 rounded-md flex items-center gap-2 group relative overflow-hidden opacity-0 animate-[fadeIn_0.5s_0.8s_forwards]">
-              <span className="relative z-10">View My Work</span>
-              <MoveRight className="w-4 h-4 group-hover:translate-x-1 transition-transform relative z-10" />
-              <span className="absolute inset-0 bg-purple-800 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
-            </Button>
+            <a href="#projects">
+              <Button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-6 rounded-md flex items-center gap-2 group relative overflow-hidden opacity-0 animate-[fadeIn_0.5s_0.8s_forwards] w-full md:w-auto justify-center md:justify-start">
+                <span className="relative z-10">View My Work</span>
+                <MoveRight className="w-4 h-4 group-hover:translate-x-1 transition-transform relative z-10" />
+                <span className="absolute inset-0 bg-purple-800 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
+              </Button>
+            </a>
           </div>
-          <div className="relative opacity-0 animate-[fadeIn_0.5s_0.4s_forwards]">
+          <div className="relative opacity-0 animate-[fadeIn_0.5s_0.4s_forwards] hidden md:block">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 animate-pulse"></div>
             <div className="relative bg-zinc-900 p-6 rounded-lg border border-zinc-800 transform transition-all duration-300 hover:scale-105 hover:rotate-1">
               <pre className="text-sm text-zinc-300 font-mono">
@@ -123,13 +129,13 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <SectionWrapper id="about" className="py-20 bg-zinc-950">
+      <SectionWrapper id="about" className="py-16 md:py-20 bg-zinc-950">
         <div className="container px-4 mx-auto">
-          <h2 className="text-3xl font-bold mb-12 flex items-center gap-2">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 flex items-center gap-2">
             <span className="text-purple-500">01.</span> About Me
             <div className="h-px bg-zinc-800 flex-grow ml-4"></div>
           </h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div>
               <AnimatedText
                 text="I'm a full-stack developer with a passion for building applications that are fast, scalable, and user-friendly. Over the past few years, I’ve worked across diverse tech stacks — from MERN and FastAPI to Flutter and Dockerized deployments."
@@ -162,7 +168,7 @@ export default function Home() {
                 once
               />
             </div>
-            <div className="relative group perspective">
+            <div className="relative group perspective mx-auto md:mx-0 max-w-xs md:max-w-none">
               <div className="absolute -inset-1.5 bg-purple-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
               <div className="relative aspect-square rounded-lg overflow-hidden border-2 border-purple-500/50 transform transition-all duration-500 group-hover:rotate-y-12">
                 <img
@@ -177,9 +183,9 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Projects Section */}
-      <SectionWrapper id="projects" className="py-20 bg-black">
+      <SectionWrapper id="projects" className="py-16 md:py-20 bg-black">
         <div className="container px-4 mx-auto">
-          <h2 className="text-3xl font-bold mb-12 flex items-center gap-2">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 flex items-center gap-2">
             <span className="text-purple-500">02.</span> My Projects
             <div className="h-px bg-zinc-800 flex-grow ml-4"></div>
           </h2>
@@ -242,7 +248,7 @@ export default function Home() {
 
             {/* Project 2 */}
             <div className="grid md:grid-cols-5 gap-6 items-center">
-              <div className="md:col-span-2">
+              <div className="md:col-span-2 order-1">
                 <div className="relative group">
                   <div className="absolute inset-0 bg-purple-600/20 rounded-lg z-0 group-hover:bg-transparent transition-colors duration-300"></div>
                   <img
@@ -253,7 +259,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
                 </div>
               </div>
-              <div className="md:col-span-3">
+              <div className="md:col-span-3 order-2">
                 <h3 className="text-xl font-bold mb-2">Featured Project</h3>
                 <h4 className="text-2xl font-bold text-purple-500 mb-4">
                   MERN E-commerce Website with Braintree Payments & Chat Feature
@@ -379,7 +385,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
                 </div>
               </div>
-              <div className="md:col-span-3">
+              <div className="md:col-span-3 order-2">
                 <h3 className="text-xl font-bold mb-2">Featured Project</h3>
                 <h4 className="text-2xl font-bold text-purple-500 mb-4">
                   Personal Finance Tracker
@@ -544,14 +550,14 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Skills Section */}
-      <SectionWrapper id="skills" className="py-20 bg-zinc-950">
+      <SectionWrapper id="skills" className="py-16 md:py-20 bg-zinc-950">
         <div className="container px-4 mx-auto">
-          <h2 className="text-3xl font-bold mb-12 flex items-center gap-2">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 flex items-center gap-2">
             <span className="text-purple-500">03.</span> My Skills
             <div className="h-px bg-zinc-800 flex-grow ml-4"></div>
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {[
               {
                 title: "Frontend",
@@ -634,9 +640,9 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Contact Section */}
-      <SectionWrapper id="contact" className="py-20 bg-black">
+      <SectionWrapper id="contact" className="py-16 md:py-20 bg-black">
         <div className="container px-4 mx-auto text-center max-w-2xl">
-          <h2 className="text-3xl font-bold mb-4 flex items-center gap-2 justify-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 flex items-center gap-2 justify-center">
             <span className="text-purple-500">04.</span> Get In Touch
           </h2>
           <AnimatedText
@@ -644,11 +650,13 @@ export default function Home() {
             className="text-zinc-400 mb-8 text-center"
             once
           />
-          <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 rounded-md relative overflow-hidden group">
-            <span className="relative z-10">Say Hello</span>
-            <span className="absolute inset-0 bg-gradient-to-r from-purple-700 to-purple-900 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
-            <span className="absolute -inset-px bg-gradient-to-r from-purple-400 to-blue-500 rounded-md opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300 group-hover:duration-200"></span>
-          </Button>
+          <a href="mailto:merahalaeddine02@gmail.com">
+            <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 rounded-md relative overflow-hidden group w-full sm:w-auto">
+              <span className="relative z-10">Say Hello</span>
+              <span className="absolute inset-0 bg-gradient-to-r from-purple-700 to-purple-900 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+              <span className="absolute -inset-px bg-gradient-to-r from-purple-400 to-blue-500 rounded-md opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300 group-hover:duration-200"></span>
+            </Button>
+          </a>
 
           <div className="flex justify-center gap-6 mt-12">
             {[
@@ -657,7 +665,7 @@ export default function Home() {
                 icon: Linkedin,
                 href: "https://www.linkedin.com/in/merah-alaeddine-599b72263/",
               },
-              { icon: Mail, href: "merahalaeddine02@gmail.com" },
+              { icon: Mail, href: "mailto:merahalaeddine02@gmail.com" },
             ].map((social, index) => {
               const Icon = social.icon;
               return (
