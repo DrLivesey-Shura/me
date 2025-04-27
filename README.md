@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Modern Portfolio Website
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-13.0+-000000?style=for-the-badge&logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-4.0+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0+-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-10.0+-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 
-First, run the development server:
+A modern, animated dark-themed portfolio website built with Next.js, TypeScript, Tailwind CSS, and Framer Motion. This portfolio template features advanced animations, interactive elements, and a responsive design.
+
+![Portfolio Preview](./public/images/1.png)
+![Portfolio Preview](./public/images/2.png)
+![Portfolio Preview](./public/images/3.png)
+![Portfolio Preview](./public/images/4.png)
+![Portfolio Preview](./public/images/5.png)
+
+## ✨ Features
+
+- 🌙 **Modern Dark Theme** - Sleek dark design with purple accents
+- 🎭 **Advanced Animations** - Powered by Framer Motion
+- 🖱️ **Custom Cursor** - Interactive cursor follower
+- ✨ **Particle Background** - Dynamic particle network
+- 📱 **Fully Responsive** - Looks great on all devices
+- 🎨 **Interactive Elements** - Hover effects and transitions
+- 🧩 **Component-Based** - Modular and reusable components
+- 🔍 **SEO Ready** - Optimized for search engines
+- 🚀 **Performance Optimized** - Fast loading and smooth animations
+
+## 🚀 Live Demo
+
+[View Live Demo](https://your-portfolio-url.vercel.app)
+
+## 🛠️ Technologies Used
+
+- **Frontend Framework**: Next.js 13+ (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **UI Components**: shadcn/ui
+- **Icons**: Lucide React
+- **Deployment**: Vercel (recommended)
+
+## 📦 Installation
+
+1. Clone the repository:
 
 ```bash
+git clone https://github.com/DrLivesey-Shura/me
+cd me
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

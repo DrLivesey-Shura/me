@@ -93,8 +93,8 @@ export default function Home() {
               />
             </h2>
             <p className="text-zinc-400 mb-8 max-w-md opacity-0 animate-[fadeIn_0.5s_0.6s_forwards]">
-              I craft web, mobile, and AI-driven applications that don't just
-              work — they scale. Whether it's real-time chat systems, e-commerce
+              I craft web, mobile, and AI-driven applications that dont just
+              work — they scale. Whether its real-time chat systems, e-commerce
               platforms, or computer vision projects, I combine strong
               engineering practices with a user-first approach.
             </p>
@@ -166,7 +166,7 @@ export default function Home() {
               <div className="absolute -inset-1.5 bg-purple-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
               <div className="relative aspect-square rounded-lg overflow-hidden border-2 border-purple-500/50 transform transition-all duration-500 group-hover:rotate-y-12">
                 <img
-                  src="/placeholder.svg?height=400&width=400"
+                  src="/images/me.jpg"
                   alt="Profile"
                   className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-300"
                 />
@@ -424,6 +424,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
             {/* Project 5 */}
             <div className="grid md:grid-cols-5 gap-6 items-center">
               <div className="md:col-span-3 order-2 md:order-1">
