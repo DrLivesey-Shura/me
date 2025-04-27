@@ -3,9 +3,9 @@ import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata = {
-  title: "Modern Portfolio | John Doe",
+  title: "Merah Alaeddine",
   description:
-    "Personal portfolio website of John Doe, a full-stack web developer",
+    "Personal portfolio website of Merah alaeddine, a full-stack web developer",
 };
 
 export default function RootLayout({

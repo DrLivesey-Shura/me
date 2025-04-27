@@ -19,10 +19,10 @@ export default function Home() {
         <div className="container flex items-center justify-between h-16 px-4 mx-auto">
           <Link href="/" className="text-xl font-bold group">
             <span className="text-purple-500 inline-block transition-transform group-hover:scale-110 duration-300">
-              Dev
+              Merah
             </span>
             <span className="inline-block transition-transform group-hover:scale-110 duration-300 delay-75">
-              Portfolio
+              Alaeddine
             </span>
           </Link>
           <nav className="hidden md:flex items-center gap-6">
